@@ -1,0 +1,20 @@
+{
+	"name": "nodeserver",
+	"version": "0.0.1",
+	"description": "Node server covered in class",
+	"main": "index.js",
+	"scripts": {
+		"dev:server": "nodemon index.js"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/cathey191/nodeServer.git"
+	},
+	"keywords": ["node", "server"],
+	"author": "Catherine Clague",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/cathey191/nodeServer/issues"
+	},
+	"homepage": "https://github.com/cathey191/nodeServer#readme"
+}
