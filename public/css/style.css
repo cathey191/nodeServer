@@ -1,0 +1,19 @@
+* {
+	padding: 0px;
+	margin: 0px;
+	box-sizing: border-box;
+	font-family: sans-serif;
+}
+
+.content {
+	max-width: 1000px;
+	margin: 0 auto;
+}
+
+h1 {
+	text-align: center;
+}
+
+.photo {
+	width: 100%;
+}
