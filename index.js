@@ -49,16 +49,16 @@ var server = http.createServer(function(request, response) {
 		var fileStream = fs.createReadStream(cssPath, 'UTF-8');
 		response.writeHead(200, { 'Content-Type': 'text/css' });
 		fileStream.pipe(response);
-		// } else if (request.url.match(/.png$/)) {
-		// 	var cssPath = path.join(__dirname, 'public', request.url);
-		// 	var fileStream = fs.readFileSync(cssPath, 'UTF-8');
-		// 	response.writeHead(200, { 'Content-Type': 'image/png' });
-		// 	response.end(response);
-		// } else if (request.url.match(/.jpg$/)) {
-		// 	var cssPath = path.join(__dirname, 'public', request.url);
-		// 	var fileStream = fs.createReadStream(cssPath, 'UTF-8');
-		// 	response.writeHead(200, { 'Content-Type': 'image/jpeg' });
-		// 	fileStream.pipe(response);
+	} else if (request.url.match(/.png$/)) {
+		var imagePath = path.join(__dirname, 'public', request.url);
+		var imageStream = fs.createReadStream(imagePath);
+		response.writeHead(200, { 'Content-Type': 'image/png' });
+		imageStream.pipe(response);
+	} else if (request.url.match(/.jpg$/)) {
+		var imagePath = path.join(__dirname, 'public', request.url);
+		var imageStream = fs.createReadStream(imagePath);
+		response.writeHead(200, { 'Content-Type': 'image/jpeg' });
+		imageStream.pipe(response);
 	} else if (request.url.match(/.js$/)) {
 		var cssPath = path.join(__dirname, 'public', request.url);
 		var fileStream = fs.createReadStream(cssPath, 'UTF-8');
