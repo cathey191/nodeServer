@@ -2,6 +2,7 @@ const http = require('http');
 const fs = require('fs');
 const path = require('path');
 const data = require('./data/products');
+const qs = require('querystring');
 
 var server = http.createServer(function(request, response) {
 	console.log(`${request.method} request for ${request.url}`);
@@ -80,14 +81,23 @@ var server = http.createServer(function(request, response) {
 			// checking data for products in stock
 		} else if (request.url === '/inStock') {
 			inStock(response);
+		} else if (request.url === '/outStock') {
+			outStock(response);
 		}
 
 		// forms POST
 	} else if (request.method === 'POST') {
 		if (request.url === '/formSubmit') {
-			console.log(request);
-			response.writeHead(200, { 'Content-Type': 'text/plain' });
-			response.end('Thank you for her new name');
+			var body = '';
+
+			request.on('data', function(data) {
+				body += data;
+			});
+
+			request.on('end', function() {
+				var formData = qs.parse(body);
+				console.log(body);
+			});
 		}
 	}
 });
@@ -96,6 +106,13 @@ server.listen(3000);
 function inStock(response) {
 	var stock = data.filter(function(item) {
 		return item.inStock === true;
+	});
+	response.end(JSON.stringify(stock));
+}
+
+function outStock(response) {
+	var stock = data.filter(function(item) {
+		return item.inStock === false;
 	});
 	response.end(JSON.stringify(stock));
 }

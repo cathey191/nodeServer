@@ -16,10 +16,19 @@
 		</nav>
 		<div class="content">
 				<h1>This is the Extras Page</h1>
-				<img src="img/sheep.png" alt="Sheep Icon">
-				<img class='photo' src="img/tim-marshall-131065-unsplash.jpg" alt="Sheep Photo">
+				<form class="filter"  method="post">
+					<label for="stock">In Stock?</label><br>
+					<input type="radio" name="stock" value="allProducts"> All<br>
+  				<input type="radio" name="stock" value="inStock"> In Stock<br>
+  				<input type="radio" name="stock" value="outStock"> Out of Stock<br>
+					<input type="submit" name="submit" value="submit" id="submitStock">
+				</form>
+				<div class="container">
+
+				</div>
 		</div>
 
+		<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 		<script src="js/script.js"></script>
 	</body>
 </html>
