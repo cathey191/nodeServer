@@ -4,7 +4,7 @@
 	"description": "Node server covered in class",
 	"main": "index.js",
 	"scripts": {
-		"dev:server": "nodemon index.js"
+		"dev:server": "nodemon -L index.js"
 	},
 	"repository": {
 		"type": "git",

@@ -16,8 +16,13 @@
 		</nav>
 		<div class="content">
 				<h1>This is the Contact Page</h1>
-				<img src="img/sheep.png" alt="Sheep Icon">
-				<img class='photo' src="img/tim-marshall-131065-unsplash.jpg" alt="Sheep Photo">
+
+				<form class="form" action="formSubmit" method="post">
+					<img src="img/sheep.png" alt="Sheep Icon"><br>
+					<label for="textInput">Name this sheep:</label><br>
+					<input type="text" name="textInput" value=""><br>
+					<input type="submit" name="submit" value="Submit">
+				</form>
 		</div>
 
 		<script src="js/script.js"></script>
